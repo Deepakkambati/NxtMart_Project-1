@@ -75,13 +75,13 @@ class Login extends Component {
     return (
       <>
         {/* eslint-disable jsx-a11y/label-has-associated-control */}
-        <label className="input-label" htmlFor="password">
+        <label className='input-label' htmlFor='password'>
           PASSWORD
         </label>
         <input
           type={type}
-          id="password"
-          className="password-input-filed"
+          id='password'
+          className='password-input-filed'
           value={password}
           onKeyUp={this.handleKeyUp}
           onChange={this.onChangePassword}
@@ -96,13 +96,13 @@ class Login extends Component {
       <>
         {' '}
         {/* eslint-disable jsx-a11y/label-has-associated-control */}
-        <label className="input-label" htmlFor="username">
+        <label className='input-label' htmlFor='username'>
           USERNAME
         </label>
         <input
-          type="text"
-          id="username"
-          className="username-input-filed"
+          type='text'
+          id='username'
+          className='username-input-filed'
           value={username}
           onChange={this.onChangeUsername}
         />
@@ -114,39 +114,39 @@ class Login extends Component {
     const {showSubmitError, errorMsg, type, buttonOk} = this.state
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
-      return <Redirect to="/" />
+      return <Redirect to='/' />
     }
 
     return (
-      <div className="login-form-container">
-        <form id="form-container" onSubmit={this.submitForm}>
+      <div className='login-form-container'>
+        <form id='form-container' onSubmit={this.submitForm}>
           <img
-            src="https://res.cloudinary.com/dqfqwre2q/image/upload/v1713680287/Logo_2_ty0ilv.png"
-            className="login-logo"
-            alt="login website logo"
+            src='https://res.cloudinary.com/dqfqwre2q/image/upload/v1713680287/Logo_2_ty0ilv.png'
+            className='login-logo'
+            alt='login website logo'
           />
-          <div className="input-container">{this.renderUsernameField()}</div>
-          <div className="input-container">{this.renderPasswordField()}</div>
-          <div className="input-container">
+          <div className='input-container'>{this.renderUsernameField()}</div>
+          <div className='input-container'>{this.renderPasswordField()}</div>
+          <div className='input-container'>
             {/* eslint-disable jsx-a11y/label-has-associated-control */}
-            <div id="passco">
+            <div id='passco'>
               <input
-                type="checkbox"
-                className="check"
-                id="showPassword"
+                type='checkbox'
+                className='check'
+                id='showPassword'
                 checked={type === 'text'}
                 onChange={this.handleCheckboxChange}
               />
-              <label htmlFor="showPassword">Show Password</label>
+              <label htmlFor='showPassword'>Show Password</label>
             </div>
           </div>
           <button
-            type="submit"
+            type='submit'
             className={`login-button ${buttonOk && 'button2'}`}
           >
             Login
           </button>
-          {showSubmitError && <p className="error-message">{errorMsg}</p>}
+          {showSubmitError && <p className='error-message'>{errorMsg}</p>}
         </form>
       </div>
     )
